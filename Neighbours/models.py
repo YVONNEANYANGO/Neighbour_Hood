@@ -3,9 +3,11 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Neighbourhood(models.Model):
-    name = models.CharField(max_lenth = 150)
+    feature = models.ImageField(upload_to = 'images/')
+    name = models.CharField(max_length = 150)
     location = models.CharField(max_length = 150)
     occupants_count = models.CharField(max_length = 150)
+    pub_date = models.DateTimeField(auto_now_add=True)
 
 
     # methods 
@@ -70,6 +72,7 @@ class Business(models.Model):
     User = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     Neighbourhood = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     business_email_address = models.CharField(max_length =150)
+    pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.business_name
