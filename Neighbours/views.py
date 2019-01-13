@@ -24,6 +24,24 @@ def profile(request):
 
     return render(request, 'profile.html', {'profile':profile})
 
+
+def newprofile(request):
+#  ivone = request.user.id
+ profile = Profile.objects.all()
+ if request.method == 'POST':
+   instance = get_object_or_404(Profile)
+   form = ProfileForm(request.POST, request.FILES,instance=instance)
+   if form.is_valid():
+     form.save()
+
+   return redirect('welcome')
+
+ else:
+   form = ProfileForm()
+
+ return render(request, 'newprofile.html',{'form':form,'profile':profile})
+  
+
 @login_required(login_url='/accounts/login/')
 def neighbourhood(request):
     neighbourhood = Neighbourhood.ojects.get_all()
