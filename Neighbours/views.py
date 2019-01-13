@@ -24,3 +24,15 @@ def profile(request):
 
     return render(request, 'profile.html', {'profile':profile})
 
+@login_required(login_url='/accounts/login/')
+def neighbourhood(request):
+    neighbourhood = Neighbourhood.ojects.get_all()
+    return render(request, "welcome.html", {"flashes":flashes})
+
+@login_required(login_url='/accounts/login/')
+def business(request):
+    business = Business.ojects.get_all()
+    return render(request, "welcome.html", {"flashes":flashes})
+
+
+
