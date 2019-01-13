@@ -2,17 +2,17 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        {% if flashes %}
-        <p>Found {{ flashes|length }} of searched profile {{message}}</p>
+        {% if neighbourhood %}
+        <p>Found {{ neighbourhood|length }} of searched profile {{message}}</p>
         {% else %}
-        <p>Found 0 flashes for the searched profile {{ message }}</p>
+        <p>Found 0 neighbourhood for the searched profile {{ message }}</p>
         {% endif %}
     </div>
     <div class="row">
-        {% if flashes %}
-        {% for flash in flashes %}
+        {% if neighbourhood %}
+        {% for neighbourhood in neighbourhoods %}
         <div class="col-sm-6 col-md-3">
-            <h1>{{flashes.profile_user}}</h1>
+            <h1>{{neighbourhood.profile_user}}</h1>
         </div>
         {% endfor %}
         {% endif %}
