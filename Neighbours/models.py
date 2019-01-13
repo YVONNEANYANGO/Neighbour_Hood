@@ -36,6 +36,7 @@ class User(models.Model):
 
     
 class Business(models.Model):
+    business_id = models.PrimaryKey
     business_name = models.CharField(max_length =150)
     User = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     Neighbourhood = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)

@@ -35,4 +35,18 @@ def business(request):
     return render(request, "welcome.html", {"flashes":flashes})
 
 
+def search_results(request):
+
+    if 'neighbourhood' in request.GET and request.GET["neighbourhood"]:
+        search_term = request.GET.get("neighbourhood")
+        searched_neighbourhood = Project.search_by_neighbourhood_id(search_term)
+
+        message = f"{search_term}"
+
+        return render(request, 'search.html', {"message":message,"neighbourhood_id": searched_neighbourhood})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
+
 
