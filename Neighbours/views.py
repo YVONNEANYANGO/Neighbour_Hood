@@ -45,12 +45,14 @@ def newprofile(request):
 @login_required(login_url='/accounts/login/')
 def neighbourhood(request):
     neighbourhood = Neighbourhood.ojects.get_all()
-    return render(request, "welcome.html", {"flashes":flashes})
+    
+    return render(request, "welcome.html", {"neighbourhood":neighbourhood})
 
 @login_required(login_url='/accounts/login/')
 def business(request):
     business = Business.ojects.get_all()
-    return render(request, "welcome.html", {"flashes":flashes})
+
+    return render(request, "welcome.html", {"business":business})
 
 
 def search_results(request):
