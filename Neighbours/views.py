@@ -67,4 +67,17 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
 
+def search_results(request):
+
+    if 'business' in request.GET and request.GET["business"]:
+        search_term = request.GET.get("business")
+        searched_business = Project.search_by_subject(search_term)
+
+        message = f"{search_term}"
+
+        return render(request, 'search.html', {"message":message,"flashes": searched_flashes})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
 
