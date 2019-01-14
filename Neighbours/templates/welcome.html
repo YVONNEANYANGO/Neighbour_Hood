@@ -11,13 +11,12 @@
         <img src="http://greenhouse.ae/wp-content/uploads/2015/10/35.jpg" alt="" height="550" width="1250">
     </div>
 
-    <div class="panel" style="column-count: 3">
+    <div class="panel" style="column-count: 3;background-color: darkgrey">
         <div class="jumbotron">
             {% if neighbourhoods %}
+            <div class="row">
             {% for neighbourhood in neighbourhoods %}
-            <div class="row" style="columns: count 3;">
-                <div class="col-md-3 "></div>
-                <div class="col-md-6 ">
+            <div class="col md-4">
                     <!-- <div class="thumbnail"> -->
                         <img src="{{neighbourhood.feature.url}}" alt="" height="250" width="250">
                         <h1 style="font-size: 10px">{{neighbourhood.name}}</h1>
@@ -27,33 +26,29 @@
                         <p>{{neighbourhood.health_dept}}</p>
                         <p>Posted On: {{neighbourhood.pub_date}}</p>
                     <!-- </div> -->
-                </div>
-                <div class="col-md-3"></div>
+                
             </div>
             {% endfor %}
         </div>
     </div>
     {% endif %}
+</div>
+</div>
     <h2 style="text-align: center">Follow me on:</h2>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col md-4">
             <div class="social">
                 <!--Facebook-->
                 <button type="button" class="btn btn-fb btn btn-success"><a href="https://www.facebook.com/user" target='blank'><i
                             class="fab fa-facebook-f pr-1"></i>Facebook</a></button><br><br>
-            </div>
-            <div class="col-md-4">
                 <!--Twitter-->
                 <button type="button" class="btn btn-tw btn btn-danger"><a href="https://twitter.com/user" target="blank"><i
                             class="fab fa-twitter pr-1"></i>Twitter</a></button><br><br>
-            </div>
-            <div class="col-md-4">
                 <!--Instagram-->
                 <button type="button" class="btn btn-ins btn btn-success"><a href="http://instagram.com/user" target="blank"><i
                             class="fab fa-instagram pr-1"></i>Instagram</a></button>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
