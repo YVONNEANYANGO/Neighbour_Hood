@@ -8,6 +8,7 @@ urlpatterns=[
     url(r'^profile/', views.profile, name='profile'),
     url(r'^new/profile$', views.newprofile, name='newprofile'),
     url(r'^neighbourhood/', views.neighbourhood, name='neighbourhood'),
+    
     url(r'^business/', views.business, name='business'),
     url(r'^search/', views.search_results, name='search_results'),
     
