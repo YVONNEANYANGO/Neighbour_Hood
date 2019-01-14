@@ -22,8 +22,8 @@ The user is able to:
 
  Expected Behaviour                        | Output                            |  Results                                 
 -------------------------------------------|-----------------------------------|------------------------------------------
- To view posted projects and their details | Click on a particular project     | Details of the project will be displayed 
- To post a project                         | Add projects through user profile | Projects will be posted                  To search for projects                    | Enter most rated project          | Most rated project will be displayed     
+ To access the application                 | Enter personnal details           | User is redirected to the home page
+ To post a neighbourhood                   | Fill the add neighbourhood form   | New neighbourhood will be created         To search for neighbourhood               | Enter the name of the hood        | The deatails of hood displayed   
  
  
 ## Terminologies Used
