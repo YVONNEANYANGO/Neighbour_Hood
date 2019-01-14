@@ -5,15 +5,15 @@ from django.contrib.auth.models import User
 from . models import Neighbourhood,User,Business
 from . forms import ProfileForm
 from django.shortcuts import get_object_or_404
+from . models import Profile
 
 # Create your views here.
 
 @login_required(login_url='accounts/login/')
 def welcome(request):
-    neighbourhood = Neighbourhood.objects.all()
-    print(Neighbourhood)
+    neighbourhoods = Neighbourhood.objects.all()
 
-    return render(request, 'welcome.html', {"neighbourhood":neighbourhood})
+    return render(request, 'welcome.html', {"neighbourhoods":neighbourhoods})
 
 
 @login_required(login_url='accounts/login/')
@@ -44,9 +44,9 @@ def newprofile(request):
 
 @login_required(login_url='/accounts/login/')
 def neighbourhood(request):
-    neighbourhood = Neighbourhood.ojects.get_all()
-    
-    return render(request, "welcome.html", {"neighbourhood":neighbourhood})
+    neighbourhoods = Neighbourhood.ojects.all().order_by()
+
+    return render(request, "welcome.html", {"neighbourhoods":neighbourhoods})
 
 @login_required(login_url='/accounts/login/')
 def business(request):

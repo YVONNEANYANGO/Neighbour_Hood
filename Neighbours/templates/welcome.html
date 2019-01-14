@@ -8,22 +8,25 @@
 <div class="container-fluid">
     <div class="page-header">
         <h1 style="font-family: fantasy">Welcome to NeighbourHood</h1>
+        <img src="http://greenhouse.ae/wp-content/uploads/2015/10/35.jpg" alt="" height="550" width="1250">
     </div>
 
-    <div class="panel">
+    <div class="panel" style="column-count: 3">
         <div class="jumbotron">
-            {% if flashes %}
-            {% for flash in flashes %}
-            <div class="row">
+            {% if neighbourhoods %}
+            {% for neighbourhood in neighbourhoods %}
+            <div class="row" style="columns: count 3;">
                 <div class="col-md-3 "></div>
                 <div class="col-md-6 ">
-                    <div class="thumbnail">
-                        <a class="text-center" href="{{ flash_id }}">{{flash.subject}}</a>
-                        <h1 class="text-center">{{flash.title}}</h1>
-                        <p>{{flash.description}}</p>
-                        <p>Posted By: {{flash.User}}</p>
-                        <p>Posted On: {{flash.pub_date}}</p>
-                    </div>
+                    <!-- <div class="thumbnail"> -->
+                        <img src="{{neighbourhood.feature.url}}" alt="" height="250" width="250">
+                        <h1 style="font-size: 10px">{{neighbourhood.name}}</h1>
+                        <p>{{neighbourhood.location}}</p>
+                        <p>Posted By: {{neighbourhood.occupants_count}}</p>
+                        <p>{{neighbourhood.police_dept}}</p>
+                        <p>{{neighbourhood.health_dept}}</p>
+                        <p>Posted On: {{neighbourhood.pub_date}}</p>
+                    <!-- </div> -->
                 </div>
                 <div class="col-md-3"></div>
             </div>
