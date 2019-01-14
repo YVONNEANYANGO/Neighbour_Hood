@@ -6,7 +6,7 @@ from . models import Neighbourhood,User,Business
 from . forms import ProfileForm
 from django.shortcuts import get_object_or_404
 from . models import Profile
-from . forms import NeighbourhoodForm
+from . forms import NewHoodForm
 
 # Create your views here.
 
@@ -45,7 +45,7 @@ def newprofile(request):
 
 @login_required(login_url='/accounts/login/')
 def neighbourhood(request):
-    neighbourhoods = Neighbourhood.ojects.all().order_by()
+    neighbourhoods = Neighbourhood.objects.all().order_by()
 
     return render(request, "welcome.html", {"neighbourhoods":neighbourhoods})
 
@@ -66,7 +66,7 @@ def add_neighbourhood(request):
 
 @login_required(login_url='/accounts/login/')
 def business(request):
-    business = Business.ojects.get_all()
+    business = Business.objects.get_all()
 
     return render(request, "welcome.html", {"business":business})
 

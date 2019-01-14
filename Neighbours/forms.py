@@ -7,7 +7,7 @@ class ProfileForm(forms.ModelForm):
         model= Profile
         exclude = ['user']
 
-class NeighbourhoodForm(forms.ModelForm):
+class NewHoodForm(forms.ModelForm):
     class Meta:
         model = Neighbourhood
         exclude = ['user']
