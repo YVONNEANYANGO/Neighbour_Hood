@@ -47,8 +47,8 @@ The user is able to:
 
 Run this command in your terminal
 
-* $ git clone https://github.com/YVONNEANYANGO/Awwards.git
-* $ cd Gallery-Webpage
+* $ git clone https://github.com/YVONNEANYANGO/Neighbour_Hood.git
+* $ cd Neighbour_Hood
 
 ## Testing the Application
 
